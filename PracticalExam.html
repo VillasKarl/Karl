@@ -1,0 +1,231 @@
+<!DOCTYPE html> 
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ <title>DigitalNest - Smartphones</title>
+
+ <style>
+  body {
+   font-family: 'Segoe UI', sans-serif;
+   margin: 0;
+   background-color: white;
+   color: black;
+  }
+
+  header {
+   background-color: black;
+   color: white;
+   padding: 1.5rem 2rem;
+   text-align: center;
+   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+
+  nav ul {
+   display: flex;
+   justify-content: center;
+   gap: 2rem;
+   list-style: none;
+   margin: 0;
+   padding: 0.75rem 0;
+   background-color: #222;
+  }
+
+  nav a {
+   color: white;
+   text-decoration: none;
+   font-weight: bold;
+   transition: color 0.3s;
+  }
+
+  nav a:hover {
+   color: #ccc;
+  }
+
+  main {
+   display: flex;
+   flex-wrap: wrap;
+   padding: 2rem;
+  }
+
+  section {
+   flex: 3;
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+   gap: 1.5rem;
+  }
+
+  article {
+   background-color: #f5f5f5;
+   border: 1px solid #ccc;
+   border-radius: 10px;
+   padding: 1rem;
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+   transition: transform 0.2s ease;
+  }
+
+  article:hover {
+   transform: scale(1.03);
+  }
+
+  figure {
+   margin: 0;
+  }
+
+  img {
+   width: 100%;
+   height: 180px;
+   object-fit: cover;
+   border-radius: 6px;
+  }
+
+  .product-title {
+   font-size: 1.3rem;
+   margin: 0.7rem 0 0.4rem;
+   color: black;
+  }
+
+  .price {
+   font-weight: bold;
+   color: black;
+   margin: 0.5rem 0;
+  }
+
+  button {
+   padding: 0.5rem 1.2rem;
+   background-color: black;
+   border: none;
+   color: white;
+   border-radius: 5px;
+   cursor: pointer;
+   transition: background 0.3s;
+  }
+
+  button:hover {
+   background-color: #333;
+  }
+
+  aside {
+   flex: 1;
+   margin-left: 1.5rem;
+   padding: 1.5rem;
+   background-color: #f0f0f0;
+   border-radius: 10px;
+   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  aside h2 {
+   color: black;
+  }
+
+  footer {
+   background-color: #222;
+   color: white;
+   text-align: center;
+   padding: 1rem;
+   margin-top: 2rem;
+  }
+
+  .social a {
+   color: white;
+   margin: 0 0.5rem;
+   text-decoration: none;
+   transition: color 0.3s;
+  }
+
+  .social a:hover {
+   color: gray;
+  }
+
+  @media (max-width: 768px) {
+   main {
+    flex-direction: column;
+   }
+
+   aside {
+    margin-left: 0;
+    margin-top: 2rem;
+   }
+  }
+ </style>
+</head>
+
+<body>
+
+ <header id="home">
+  <h1>DigitalNest - Smartphones</h1>
+  <p>Your ultimate destination for high-performance phones</p>
+ </header>
+
+ <nav>
+  <ul>
+   <li><a href="#home">Home</a></li>
+   <li><a href="#products">Products</a></li>
+   <li><a href="#about">About</a></li>
+   <li><a href="#contact">Contact</a></li>
+  </ul>
+ </nav>
+
+ <main>
+  <section id="products">
+   
+   <article>
+    <figure>
+     <img src="h732 (1).png" alt="ROG 8 Pro" />
+     <figcaption class="product-title">ASUS ROG 8 Pro</figcaption>
+    </figure>
+    <p>The ASUS ROG 8 Pro is designed for gamers who demand top-tier performance. With a Snapdragon 8 Gen 3, AMOLED display, and incredible cooling, it's built to handle even the most intense games.</p>
+    <p class="price">$1,299</p>
+    <button onclick="alert('Purchase feature coming soon')">Buy Now</button>
+   </article>
+
+   
+   <article>
+    <figure>
+     <img src="OIP.jpg" alt="RedMagic 9 Pro" />
+     <figcaption class="product-title">RedMagic 9 Pro</figcaption>
+    </figure>
+    <p>The RedMagic 9 Pro offers incredible power with its Snapdragon 8 Gen 3 chip, a 165Hz AMOLED screen, and 18GB of RAM. Perfect for mobile gamers looking to take their experience to the next level.</p>
+    <p class="price">$1,149</p>
+    <button onclick="alert('Purchase feature coming soon')">Buy Now</button>
+   </article>
+
+  
+   <article>
+    <figure>
+     <img src="pol_pl_Smartfon-Redmi-Note-13-Pro-5G-12-512GB-Midnight-Black-2574_1.webp" alt="Poco F7 Pro" />
+     <figcaption class="product-title">Poco F7 Pro</figcaption>
+    </figure>
+    <p>The Poco F7 Pro combines high performance with affordability. Featuring a Snapdragon 8 Gen 3, a 120Hz AMOLED display, and a 5,000mAh battery, it’s designed for those who want premium features at a great price.</p>
+    <p class="price">$699</p>
+    <button onclick="alert('Purchase feature coming soon')">Buy Now</button>
+   </article>
+  </section>
+
+  <aside>
+   <h2>Why Choose DigitalNest?</h2>
+   <p><strong>Experience Technology, Buy with Confidence.</strong></p>
+   <p>We bring you the latest high-performance smartphones with exceptional value and customer support. Every purchase comes with a warranty and dedicated service.</p>
+   <ul>
+    <li>Free accessories with every purchase</li>
+    <li>Flexible installment plans available</li>
+    <li>Nationwide delivery</li>
+    <li>Exclusive offers for loyal customers</li>
+   </ul>
+  </aside>
+ </main>
+
+ <footer id="contact">
+  <p>&copy; 2025 DigitalNest. All rights reserved.</p>
+  <p>Contact us at: <strong>0948-123-0983</strong></strong></p>
+  <p>Facebook: <a href="https://www.facebook.com/share/1AWNGhYieT/" target="_blank">DigitalNest Official</a></p>
+  <div class="social">
+   <a href="https://www.facebook.com/share/1AWNGhYieT/" target="_blank">Facebook</a> |
+   <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+  </div>
+ </footer>
+
+</body>
+
+</html>

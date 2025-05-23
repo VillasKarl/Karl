@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Startix</title>
+
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 2000;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    header h1 {
+      font-size: 3rem;
+      letter-spacing: 2px;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #d1ecf1;
+    }
+
+    nav {
+      background: #111;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav a {
+      color: #81d4fa;
+      margin: 0 15px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      transition: all 0.3s ease-in-out;
+    }
+
+    nav a:hover {
+      color: #ffffff;
+      text-shadow: 0 0 5px #81d4fa;
+    }
+
+    main {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 20px;
+      gap: 20px;
+    }
+
+    section {
+      flex: 1;
+      background: linear-gradient(145deg, #1f2b38, #273947);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s;
+    }
+
+    section:hover {
+      transform: translateY(-5px);
+    }
+
+    section h2 {
+      border-bottom: 2px solid #81d4fa;
+      padding-bottom: 10px;
+      color: #81d4fa;
+    }
+
+    article h3 {
+      color: #4fc3f7;
+      margin-top: 0;
+    }
+
+    article a {
+      color: #81d4fa;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+
+    article {
+      margin-bottom: 20px;
+      border-bottom: 1px dashed #555;
+      padding-bottom: 10px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      padding: 8px 0;
+    }
+
+    ul li a {
+      color: #4fc3f7;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    ul li a:hover {
+      text-shadow: 0 0 5px #4fc3f7;
+    }
+
+    footer {
+      font-size: 16px;
+      padding: 1rem;
+      background: #0f2027;
+      color: #81d4fa;
+      text-align: center;
+      margin-top: auto;
+      border-top: 1px solid #1e3c72;
+    }
+
+    /* Modal Styles */
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    .modal-content {
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: #fff;
+      padding: 2rem;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      animation: popIn 0.4s ease-out;
+    }
+
+    .modal-content h2 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .modal-content p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .modal-content button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      background-color: #81d4fa;
+      color: #000;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .modal-content button:hover {
+      background-color: #4fc3f7;
+    }
+
+    @keyframes popIn {
+      0% {
+        transform: scale(0.6);
+        opacity: 0;
+      }
+
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 768px) {
+      main {
+        flex-direction: column;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 8px;
+        font-size: 16px;
+      }
+
+      header h1 {
+        font-size: 2.5rem;
+      }
+
+      section {
+        margin-bottom: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      nav a {
+        font-size: 14px;
+      }
+
+      section h2 {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Welcome Modal -->
+  <div id="welcomeModal" class="modal">
+    <div class="modal-content">
+      <h2>Welcome to Startix</h2>
+      <p>Power Your Play!</p>
+      <button id="closeModal">OK</button>
+    </div>
+  </div>
+
+  <!-- Website Content -->
+  <header>
+    <h1>Startix</h1>
+    <p>Power Your Play – Explore the World of Gaming Phones</p>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="Gallery.html">Gallery</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="universe.html">Universe</a>
+    <a href="ContactUs.html">Contact Us</a>
+    <a href="aboutus.html">About Us</a>
+  </nav>
+
+  <main>
+    <section>
+      <h2>Latest Articles</h2>
+      <article>
+        <h3>Top 10 Gaming Phones of 2025</h3>
+        <p>Get the edge with the ultimate gaming smartphones built for performance, speed, and style...</p>
+        <a href="#">Read More</a>
+      </article>
+      <article>
+        <h3>Multiplayer on Mobile: Master the Meta</h3>
+        <p>Level up your strategy with pro tips to dominate mobile esports and ranked matches...</p>
+        <a href="#">Read More</a>
+      </article>
+    </section>
+
+    <section>
+      <h2>What's New</h2>
+      <p>Stay plugged into the future of mobile gaming – new tech, big titles, and updates that matter!</p>
+      <h3>Recent Highlights</h3>
+      <ul>
+        <li><a href="#">Razer Edge Ultra Release</a></li>
+        <li><a href="#">Snapdragon G4 Benchmarks</a></li>
+        <li><a href="#">Arena Breakers Global Finals</a></li>
+        <li><a href="#">Gaming OS Update 5.0</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Startix. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const modal = document.getElementById("welcomeModal");
+      const closeBtn = document.getElementById("closeModal");
+
+      modal.style.display = "flex";
+
+      closeBtn.addEventListener("click", function () {
+        modal.style.display = "none";
+      });
+    });
+  </script>
+</body>
+
+</html>

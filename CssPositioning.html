@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="HTML5, HTML5, Semantics">
+    <title>Css Positioning</title>
+    <link rel="stylesheet" href="css/Csspositioning.css">
+</head>
+<body>
+    <div class="container">
+        <div class="static-box">Static Position (Default)</div>
+        <div class="relative-box">Relative Position (Moves relative to itself)</div>
+
+        <div class="sticky-box">Sticky Position(Stays visible when scrolling)</div>
+
+        <div class="content">
+            Scroll down to see the sticky header effect.
+            <div class="absolute-box">AAbsolute Position (Moves relative to nearest positioned ancestor)</div>
+        </div>
+        
+    </div>
+    <style>body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+    }
+    .container {
+        width: 90%;
+        max-width: 800px;
+        margin: auto;
+    }
+    .static-box {
+        position: static;
+        background: #ddb607;
+        padding: 10px;
+        color: white;
+        margin-bottom: 10px;
+    }
+    .relative-box {
+        position: relative;
+        top: 20px;
+        left: 20px;
+        background: #c3d475;
+        padding: 10px;
+        color: white;
+    }
+    .absolute-box {
+        position: absolute;
+        top: 50px;
+        left: 50px;
+        background: rgb(103, 159, 214);
+        padding: 10px;
+        color: darkslateblue;
+    }
+    .fixed-box {
+        position: fixed;
+        top: 0;
+        right: 0;
+        background: #e26d6d;
+        padding: 10px;
+        color: white;
+        width: 150px;
+        text-align: center;
+    }
+    .sticky-box {
+        position: sticky;
+        top: 0;
+        background: rgb(135, 91, 177);
+        padding: 10px;
+        color: white;
+    }
+    .content {
+        height: 150vh;
+        background: #ddd;
+        padding: 20px;
+    }</style>
+</body>
+</html>

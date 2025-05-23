@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gamers Paradise</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0d1117; /* Dark background for a gaming vibe */
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Glowing text animation for the title */
+    .title {
+      font-size: 5rem;
+      color: #1e90ff; /* Bright blue for the text */
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 4px;
+      text-shadow: 0 0 5px #1e90ff, 0 0 15px #00bfff, 0 0 30px #00bfff;
+      animation: glowingText 1.5s ease-in-out infinite alternate;
+    }
+
+    /* Keyframe for glowing text effect */
+    @keyframes glowingText {
+      0% { text-shadow: 0 0 5px #1e90ff, 0 0 15px #00bfff, 0 0 30px #00bfff; }
+      100% { text-shadow: 0 0 10px #1e90ff, 0 0 20px #00bfff, 0 0 40px #1e90ff; }
+    }
+
+    /* Background moving particles (or stars) */
+    .background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://www.transparenttextures.com/patterns/stardust.png');
+      background-size: cover;
+      animation: moveBackground 10s linear infinite;
+      z-index: -1;
+    }
+
+    /* Animating the background effect */
+    @keyframes moveBackground {
+      0% { background-position: 0 0; }
+      100% { background-position: 100% 100%; }
+    }
+
+    /* Neon glow effect for button */
+    .cta-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      background-color: #00bfff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 30px;
+      box-shadow: 0 0 15px #00bfff, 0 0 30px #00bfff;
+      transition: all 0.3s ease-in-out;
+    }
+
+    /* Button hover effect */
+    .cta-btn:hover {
+      background-color: #1e90ff;
+      box-shadow: 0 0 25px #1e90ff, 0 0 50px #1e90ff;
+    }
+
+    /* Animating a pulse effect on the call to action button */
+    .cta-btn:active {
+      animation: pulse 0.5s infinite alternate;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.1); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background animation for stars -->
+  <div class="background"></div>
+
+  <!-- Main Content Section -->
+  <h1 class="title">Gamers Paradise</h1>
+
+  <!-- Call to Action Button (this can be linked to another page) -->
+  <!-- If you'd like it to go to a new page, change 'newpage.html' to your desired file path -->
+  <a href="universe.html" class="cta-btn">Enter the Realm</a>
+
+</body>
+</html>
